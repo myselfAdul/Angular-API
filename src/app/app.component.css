@@ -1,0 +1,23 @@
+.user-details{
+    display: flex;
+    justify-content: space-around;
+}
+
+ul{
+    margin: 0;
+}
+h1{
+    display: flex;
+    font-weight: bold;
+}
+.title{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.slider{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}

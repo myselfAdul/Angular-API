@@ -1,0 +1,56 @@
+Directives in Angular
+
+1. Structural Directives
+Structural directives shape the DOM structure.
+
+- *ngIf: 
+  - Used to conditionally include or exclude elements in the DOM.
+  - Logical Operators: 
+    - || (OR)
+    - && (AND)
+    - ! (NOT)
+  - ngIf with else: 
+    <div *ngIf="condition; else elseTemplate">Value 1</div>
+    <ng-template #elseTemplate>Value 2</ng-template>
+  - ngIf with then and else: 
+    <div *ngIf="condition; then thenTemplate else elseTemplate"></div>
+    <ng-template #thenTemplate>Value 1</ng-template>
+    <ng-template #elseTemplate>Value 2</ng-template
+
+- ngShow: 
+  - Shows an element if the expression evaluates to true.
+  <p ng-show="showMessage">This message is shown when 'showMessage' is true.</p>
+
+- ngHide: 
+  - Hides an element if the expression evaluates to true.
+  <p ng-hide="showMessage">This message is hidden when 'showMessage' is true.</p>
+
+- *ngFor: 
+  - Used to iterate over a collection and render an element for each item.
+  <ul>
+    <li *ngFor="let item of items">{{ item }}</li>
+  </ul>
+
+- *ngSwitch: 
+  - Used to switch between multiple templates based on a condition.
+  <div [ngSwitch]="condition">
+    <div *ngSwitchCase="'value1'">Value 1</div>
+    <div *ngSwitchCase="'value2'">Value 2</div>
+    <div *ngSwitchDefault>Default Value</div>
+  </div>
+
+2. Interpolation
+- Interpolation is used to bind data to the template using {{ }} syntax.
+
+3. AngularJS Directives
+- ng-repeat: 
+  - Used in AngularJS to iterate over a collection.
+  <ul>
+    <li ng-repeat="item in contacts">{{ item.firstName }}</li>
+  </ul>
+
+
+
+
+
+
