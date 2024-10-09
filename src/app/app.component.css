@@ -1,6 +1,7 @@
 .user-details{
     display: flex;
     justify-content: space-around;
+    color: whitesmoke !important;
 }
 
 ul{
@@ -23,6 +24,9 @@ h1{
 }
 
 .mat-elevation-z8{
-    background-color: rgba(208, 158, 97, 0.533);
+    background-color: #16161e54;
+}
 
+th, td{
+    color: whitesmoke;
 }

@@ -1,0 +1,50 @@
+### Project Overview:
+The project is built using **Angular** and **Angular Material**. It fetches user data from an external API and displays it in a table format. Users can toggle the visibility of the data using a material slide toggle component.
+
+### Key Components:
+
+#### 1. **UsersDataService (Service Layer):**
+   - This service is responsible for interacting with the external API and fetching the user data.
+   - The `HttpClient` service is used to perform a GET request to an API endpoint (`https://dummyapi.online/api/users`).
+   - The method `users()` returns an `Observable` of an array of `User` objects, which allows the `AppComponent` to subscribe to the data and react when the data is available.
+
+   **Flow:**
+   - The service is injectable (`@Injectable({ providedIn: 'root' })`), which makes it globally available throughout the app.
+
+#### 2. **User Model:**
+   - The `User` model defines the structure of the user object expected from the API. It includes fields like `id`, `name`, `username`, `email`, and a nested `address` object.
+   - The nested structure in the `address` object includes fields like `city`, `street`, `state`, and `zipcode`.
+
+#### 3. **AppComponent (Presentation Layer):**
+   - The `AppComponent` is the core component where data handling and presentation logic are implemented.
+   - The **Material Table** (`MatTable`) is used to display the user data in a structured table format. It uses a `MatTableDataSource` to bind the fetched user data to the table.
+   - The component also includes a `mat-slide-toggle` to allow users to toggle the visibility of the user details table (`isDetailsVisible`).
+   
+   **Key Features:**
+   - **Data Fetching:** The `fetchUsers()` method in the component subscribes to the `users()` method from the service and assigns the returned data to the `dataSource`.
+   - **Error Handling:** Any errors during data fetching are logged to the console.
+   - **Table Columns:** The columns displayed in the table are dynamically defined using the `displayedColumns` array (`id`, `name`, `username`, `email`, and `city`).
+
+#### 4. **HTML Template:**
+   - The template includes:
+     - A header that indicates data fetching.
+     - A `mat-slide-toggle` that controls whether the user details table is shown or hidden.
+     - A Material Table (`mat-table`) that displays the user data in rows, with dynamic content bound to the `dataSource` populated in the component.
+
+   **Dynamic Rendering:**
+   - When the `isDetailsVisible` property is `true`, the user data table is shown using the `*ngIf` directive.
+   - Each column is mapped to specific user fields like `id`, `name`, `username`, `email`, and `city` (from the `address` object).
+
+### Overall Data Flow:
+1. The component is initialized, and the `fetchUsers()` method is called.
+2. The `UsersDataService` sends an HTTP GET request to fetch the user data from the API.
+3. Once the data is received, it is assigned to the `dataSource`, which binds the data to the Material Table in the template.
+4. The user can toggle the visibility of the table using the `mat-slide-toggle`.
+
+### Technology Breakdown:
+- **Angular**: Core framework for building the application.
+- **HttpClientModule**: Handles the HTTP request to fetch data from the API.
+- **RxJS Observable**: Used for handling asynchronous data fetching with HTTP.
+- **Angular Material**: Provides pre-built UI components like the `MatTable` and `mat-slide-toggle` for table display and toggling functionality.
+
+This provides a clear and structured way to fetch and display data with Angular's reactive data handling and Material UI components.
