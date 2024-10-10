@@ -37,3 +37,48 @@ td:hover {
   background-color: rgba(255, 68, 0, 0.858);
   transition: 0.5s ease;
 }
+
+
+
+
+
+
+
+
+
+.title {
+  font-size: 2em;
+  color: #4A90E2; /* Title color */
+  text-align: center; /* Center the title */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+h3 {
+  font-size: 1.5em;
+  color: whitesmoke; /* Author name color */
+  margin: 15px 0 10px; /* Margin around author names */
+  text-decoration: underline; /* Underline author names */
+  background-color: #16161e54;
+}
+
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding-left: 0; /* Remove padding */
+  background-color: #f9f9f9; /* Light background for quotes */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 10px; /* Padding inside the list */
+}
+
+li {
+  margin-bottom: 10px; /* Space between quotes */
+  font-style: italic; /* Italicize quotes */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+  padding: 5px; /* Padding for each quote */
+  border-left: 4px solid #4A90E2; /* Left border for visual style */
+}
+
+li:hover {
+  background-color: #e0f7fa; /* Light blue background on hover */
+  color: #333; /* Dark text color on hover */
+}
